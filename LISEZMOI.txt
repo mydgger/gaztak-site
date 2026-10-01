@@ -1,0 +1,8 @@
+GAZTAK – sources du site
+========================
+
+Ce dossier sert à régénérer le site (par exemple au changement de carte, en avril et en octobre).
+Tu n'as rien à en faire toi-même : renvoie-le simplement à Claude avec la nouvelle carte.
+
+- contenu.py : tous les textes (FR, EN, ES), la carte, les horaires, les infos légales
+- build.py   : fabrique les pages du site à partir de contenu.py
