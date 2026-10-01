@@ -1,0 +1,237 @@
+/* GAZTAK – le bar à fromages d’Agen. Thème « Comptoir basque ». */
+
+@font-face{font-family:"Bricolage Grotesque";src:url(/assets/fonts/bricolage-grotesque.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(/assets/fonts/instrument-sans-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(/assets/fonts/instrument-sans-600.woff2) format("woff2");font-weight:600 700;font-style:normal;font-display:swap}
+
+:root{
+  --lin:#faf8f4;
+  --blanc:#ffffff;
+  --encre:#1d1d1b;
+  --rouge:#a8322a;
+  --rouge-fonce:#8c2821;
+  --rose:#f8e3df;
+  --vert:#1f4a3a;
+  --vert-clair:#cfe3d8;
+  --gris:#57524a;
+  --sable:#e8e2d8;
+  --trait:#e3ddd2;
+  --f-titre:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;
+  --f-texte:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --largeur:1240px;
+  --marge:clamp(20px,4vw,32px);
+  --r-carte:18px;
+  --r-bloc:24px;
+  --espace:clamp(64px,9vw,104px);
+  color-scheme:light;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:16px}
+body{margin:0;background:var(--lin);color:var(--encre);font-family:var(--f-texte);font-size:1.0625rem;line-height:1.6;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-underline-offset:3px}
+p,h1,h2,h3,figure{margin:0}
+:focus-visible{outline:3px solid var(--rouge);outline-offset:3px;border-radius:4px}
+.hero-texte :focus-visible,.bloc-vert :focus-visible,.bloc-rouge :focus-visible,.bandeau :focus-visible,.pied :focus-visible{outline-color:#fff}
+
+.evitement{position:absolute;left:12px;top:-80px;z-index:30;background:var(--encre);color:#fff;padding:12px 18px;border-radius:999px;font-weight:600;text-decoration:none}
+.evitement:focus{top:12px}
+
+.wrap{max-width:var(--largeur);margin:0 auto;padding-left:var(--marge);padding-right:var(--marge)}
+.rayures{height:30px;background:linear-gradient(180deg,var(--rouge) 0 6px,var(--lin) 6px 10px,var(--vert) 10px 14px,var(--lin) 14px 16px,var(--vert) 16px 20px,var(--lin) 20px 24px,var(--rouge) 24px 30px)}
+
+/* ---------- En-tête ---------- */
+.entete{background:var(--lin);border-bottom:2px solid var(--encre)}
+.entete-grille{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:8px 20px;padding-top:12px;padding-bottom:12px}
+.logo{display:block;line-height:0}
+.logo img{height:62px;width:auto}
+.nav{justify-self:end;display:flex;align-items:center;gap:4px 22px;flex-wrap:wrap;font-weight:600}
+.nav>a{text-decoration:none;padding:10px 0}
+.nav>a:hover{color:var(--rouge)}
+.nav>a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:7px}
+.langues{display:flex;gap:2px;margin:0;padding:0;list-style:none}
+.langues a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border-radius:999px;font-size:.875rem;text-decoration:none}
+.langues a[aria-current="true"]{background:var(--encre);color:#fff}
+.langues a:not([aria-current="true"]):hover{background:var(--sable)}
+@media (max-width:900px){
+  .entete-grille{grid-template-columns:1fr auto auto;gap:6px 8px}
+  .nav{grid-column:1/-1;grid-row:2;justify-self:stretch;justify-content:space-between;gap:0 14px;border-top:1px solid var(--trait);padding-top:4px}
+  .logo img{height:48px}
+  .logo{grid-column:1;grid-row:1}
+  .langues{grid-column:2;grid-row:1}
+  .btn-entete{grid-column:3;grid-row:1;padding:0 16px}
+  .langues a{min-width:40px}
+}
+
+/* ---------- Boutons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 26px;border-radius:999px;border:2px solid transparent;font:inherit;font-weight:600;line-height:1.2;text-align:center;text-decoration:none;cursor:pointer}
+.btn-petit{min-height:44px;padding:0 20px}
+.btn-rouge{background:var(--rouge);color:#fff}
+.btn-rouge:hover{background:var(--rouge-fonce)}
+.btn-blanc{background:#fff;color:var(--encre)}
+.btn-blanc:hover{background:var(--lin)}
+.btn-noir{background:var(--encre);color:#fff}
+.btn-noir:hover{background:#3a3835}
+.btn-contour{border-color:currentColor;background:transparent}
+.btn-contour:hover{background:rgba(29,29,27,.06)}
+.hero-texte .btn-contour:hover,.bloc-vert .btn-contour:hover,.bloc-rouge .btn-contour:hover{background:rgba(255,255,255,.14)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- Titres ---------- */
+.titre-xl{font-family:var(--f-titre);font-weight:800;font-size:clamp(44px,7vw,96px);line-height:.9;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance}
+.titre-l{font-family:var(--f-titre);font-weight:800;font-size:clamp(30px,4vw,50px);line-height:1.04;letter-spacing:-.01em;text-wrap:balance}
+.intro{font-size:1.1875rem;color:var(--gris);max-width:38em}
+.section{padding-top:var(--espace)}
+
+/* ---------- Héros ---------- */
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(520px,100%),1fr))}
+.hero-texte{background:var(--rouge);color:#fff;padding:clamp(44px,7vw,88px) clamp(20px,5vw,72px);display:flex;flex-direction:column;justify-content:center;gap:26px;min-height:560px}
+.hero-titre{display:flex;flex-direction:column;gap:16px;font-family:var(--f-titre);font-weight:800;line-height:1.02;letter-spacing:-.01em}
+.hero-titre img{width:min(100%,440px);height:auto}
+.hero-titre span{font-size:clamp(28px,3.4vw,46px)}
+.titre-hero{font-family:var(--f-titre);font-weight:800;font-size:clamp(46px,6.4vw,96px);line-height:.92;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance}
+.hero-texte>p{max-width:32em;font-size:1.1875rem;color:var(--rose)}
+.hero-photo{position:relative;min-height:560px;background:var(--sable)}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-photo .cadre-bas{object-position:center 65%}
+@media (max-width:1060px){.hero-texte{min-height:0}.hero-photo{min-height:340px}}
+
+/* ---------- Bandeau infos ---------- */
+.bandeau{background:var(--vert);color:#fff}
+.bandeau-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:18px 32px;padding-top:28px;padding-bottom:28px}
+.etiquette{font-family:var(--f-titre);font-weight:700;color:var(--vert-clair)}
+.bandeau-grille p:not(.etiquette){font-size:1.125rem}
+.bandeau a{text-decoration-color:rgba(255,255,255,.55)}
+
+/* ---------- La maison ---------- */
+.maison{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:16px}
+.maison-texte{display:flex;flex-direction:column;justify-content:center;gap:20px;padding:8px clamp(0px,2vw,24px) 8px 0}
+.maison-texte>p{color:var(--gris);font-size:1.125rem}
+.maison-texte>p.mention-guide{align-self:flex-start;border:2px solid var(--encre);border-radius:999px;padding:8px 18px;font-weight:600;font-size:1rem;color:var(--encre)}
+.tuile{border-radius:var(--r-carte);overflow:hidden;min-height:320px}
+.tuile-photo img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover}
+.tuile-verte{background:var(--vert);color:#fff;padding:32px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px}
+.tuile-grand{font-family:var(--f-titre);font-weight:800;font-size:clamp(30px,3.2vw,42px);line-height:1.02;text-wrap:balance}
+.tuile-verte p:not(.tuile-grand){color:var(--vert-clair);font-size:1.125rem}
+
+/* ---------- Raclette (accueil) ---------- */
+.raclette-accueil{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:clamp(28px,5vw,64px);align-items:center}
+.raclette-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r-bloc)}
+.raclette-texte{display:flex;flex-direction:column;gap:24px}
+.raclette-texte .titre-xl{font-size:clamp(44px,6vw,84px)}
+.formules{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px}
+.formules li{border:2px solid var(--encre);border-radius:var(--r-carte);background:#fff;padding:18px 20px;display:flex;flex-direction:column;gap:2px}
+.formules strong{font-family:var(--f-titre);font-weight:800;font-size:1.25rem;line-height:1.2}
+.formules span{color:var(--gris)}
+
+/* ---------- Carte ---------- */
+.titre-ligne{display:flex;align-items:flex-end;justify-content:space-between;gap:16px 24px;flex-wrap:wrap}
+.titre-ligne+.intro{margin-top:16px}
+.cartes-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:20px;margin-top:28px}
+.carte-bloc{background:#fff;border:2px solid var(--encre);border-radius:var(--r-carte);padding:clamp(22px,3vw,30px);display:flex;flex-direction:column;gap:16px}
+.pastille{align-self:flex-start;background:var(--vert);color:#fff;font-family:var(--f-texte);font-weight:600;font-size:.9375rem;line-height:1.3;padding:7px 16px;border-radius:999px}
+.carte-intro{color:var(--gris);font-style:italic}
+.plats{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.plats li{padding:12px 0;border-bottom:1px solid var(--trait);display:flex;flex-direction:column;gap:2px}
+.plats li:first-child{padding-top:0}
+.plats li:last-child{border-bottom:0;padding-bottom:0}
+.plat-nom{font-weight:600;font-size:1.125rem;line-height:1.35}
+.plat-detail{font-weight:400;font-style:italic;color:var(--gris)}
+.plat-desc{color:var(--gris);font-size:.9375rem}
+.carte-complete{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:20px}
+.bloc-rouge{grid-column:1/-1;background:var(--rouge);color:#fff;border-radius:var(--r-bloc);padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:24px 48px;align-items:center}
+.bloc-rouge>div:first-child{display:flex;flex-direction:column;gap:16px}
+.bloc-rouge p{color:var(--rose)}
+.bloc-rouge .formules li{background:transparent;border-color:#fff}
+.bloc-rouge .formules span{color:var(--rose)}
+.bloc-boissons{grid-column:1/-1;background:var(--vert);color:#fff;border-radius:var(--r-bloc);padding:clamp(24px,3vw,36px);display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 32px}
+.bloc-boissons h2{font-family:var(--f-titre);font-weight:800;font-size:clamp(26px,3vw,36px)}
+.bloc-boissons p{color:var(--vert-clair);font-size:1.125rem}
+.note{margin-top:20px;color:var(--gris);font-size:.9375rem}
+
+/* ---------- En-tête de page (carte) ---------- */
+.page-tete{padding-top:clamp(40px,6vw,72px)}
+.page-tete-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:clamp(28px,5vw,64px);align-items:center}
+.page-tete-texte{display:flex;flex-direction:column;gap:22px}
+.page-tete-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-bloc)}
+
+/* ---------- Privatisation / appel à l'action ---------- */
+.privat{background:#fff;border:2px solid var(--encre);border-radius:var(--r-bloc);padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:24px 48px;align-items:center}
+.privat p{color:var(--gris);font-size:1.125rem;margin-top:14px;max-width:34em}
+.privat .actions{justify-content:flex-end}
+@media (max-width:860px){.privat .actions{justify-content:flex-start}}
+
+/* ---------- Réservation et infos ---------- */
+.resa-infos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:20px}
+.bloc-vert{background:var(--vert);color:#fff;border-radius:var(--r-bloc);padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;gap:18px}
+.bloc-vert>p{color:var(--vert-clair)}
+.bloc-vert a{color:#fff}
+.resa-cadre{background:#fff;border-radius:16px;overflow:hidden;flex-grow:1;min-height:600px;display:flex}
+.resa-cadre iframe{display:block;width:100%;min-height:640px;border:0}
+.bloc-blanc{background:#fff;border:2px solid var(--encre);border-radius:var(--r-bloc);padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;gap:16px}
+.bloc-blanc h3{font-family:var(--f-titre);font-weight:800;font-size:1.5rem;margin-top:12px}
+.horaires{width:100%;border-collapse:collapse}
+.horaires th,.horaires td{padding:10px 0;border-bottom:1px solid var(--trait);text-align:left;font-weight:600}
+.horaires td{text-align:right;font-weight:400}
+.horaires tr:last-child th,.horaires tr:last-child td{border-bottom:0}
+.horaires .ferme{color:var(--gris)}
+.petit{font-size:.9375rem}
+.discret{color:var(--gris)}
+.plan{margin-top:20px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.plan iframe{display:block;width:100%;height:clamp(300px,40vw,420px);border:2px solid var(--encre);border-radius:var(--r-bloc);background:var(--sable)}
+
+/* ---------- Page raclette ---------- */
+.deux-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:20px;margin-top:28px}
+.deux-col h3{font-family:var(--f-titre);font-weight:800;font-size:clamp(24px,2.6vw,30px);line-height:1.1}
+.condition{font-weight:600;color:var(--rouge)}
+.carte-bloc>p:not(.condition){color:var(--gris)}
+.bloc-vert.reste{margin-top:20px}
+.liste{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.liste li{position:relative;padding-left:30px;font-size:1.125rem}
+.liste li::before{content:"";position:absolute;left:0;top:.42em;width:14px;height:14px;border-radius:50%;background:var(--vert-clair)}
+.faq{max-width:900px}
+.faq h2{margin-bottom:12px}
+.faq details{border-bottom:2px solid var(--encre)}
+.faq summary{cursor:pointer;list-style:none;position:relative;padding:20px 44px 20px 0;font-family:var(--f-titre);font-weight:700;font-size:1.25rem;line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:16px;font-size:1.75rem;font-weight:500;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding-bottom:22px;color:var(--gris);max-width:40em}
+
+/* ---------- Pages légales ---------- */
+.prose{max-width:780px;padding-top:clamp(40px,6vw,72px)}
+.prose h2{font-family:var(--f-titre);font-weight:800;font-size:1.5rem;margin:36px 0 8px}
+.prose p{color:#3d3a35}
+
+/* ---------- Pied de page ---------- */
+.pied{margin-top:var(--espace)}
+.pied-fond{background:var(--encre);color:#d9d2c6}
+.pied-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:32px;padding-top:48px;padding-bottom:36px}
+.pied-grille img{height:56px;width:auto;margin-bottom:14px}
+.pied-titre{font-family:var(--f-titre);font-weight:700;font-size:1.0625rem;color:#fff;margin-bottom:8px}
+.pied-grille p+p{margin-top:8px}
+.pied a{color:#fff}
+.reseaux{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.reseaux a{display:inline-flex;align-items:center;gap:10px;min-height:44px;text-decoration:none}
+.reseaux a:hover{text-decoration:underline}
+.reseaux svg{width:22px;height:22px;flex-shrink:0}
+.pied-bas{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 24px;padding-top:10px;padding-bottom:10px;font-size:.875rem}
+.pied-bas::before{content:"";position:absolute;top:0;left:var(--marge);right:var(--marge);border-top:1px solid #3a3835}
+.pied-bas nav{display:flex;flex-wrap:wrap;gap:0 20px}
+.pied-bas nav a{display:inline-flex;align-items:center;min-height:44px}
+.evin{font-size:.8125rem;color:#bdb5a8;padding-bottom:28px}
+
+/* ---------- Fenêtre de réservation ---------- */
+.resa-dialog{border:0;padding:0;border-radius:var(--r-bloc);width:min(600px,calc(100% - 24px));max-height:calc(100dvh - 24px);background:#fff;color:var(--encre);overflow:hidden}
+.resa-dialog[open]{display:flex;flex-direction:column}
+.resa-dialog::backdrop{background:rgba(29,29,27,.62)}
+.resa-tete{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 12px 12px 22px;border-bottom:2px solid var(--encre)}
+.resa-tete h2{font-family:var(--f-titre);font-weight:800;font-size:1.375rem}
+.btn-fermer{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:2px solid var(--encre);background:#fff;color:var(--encre);cursor:pointer}
+.btn-fermer:hover{background:var(--lin)}
+.btn-fermer svg{width:18px;height:18px}
+.resa-dialog iframe{display:block;width:100%;height:min(680px,calc(100dvh - 190px));border:0;flex-shrink:1}
+.resa-pied{padding:12px 22px 16px;border-top:1px solid var(--trait);font-size:.9375rem;display:flex;flex-direction:column;gap:2px}
+
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
