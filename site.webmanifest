@@ -1,0 +1,20 @@
+{
+ "name": "GAZTAK – le bar à fromages d’Agen",
+ "short_name": "GAZTAK",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ],
+ "theme_color": "#a8322a",
+ "background_color": "#faf8f4",
+ "display": "browser",
+ "start_url": "/"
+}
