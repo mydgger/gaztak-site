@@ -209,7 +209,7 @@ p,h1,h2,h3,figure{margin:0}
 /* ---------- Pied de page ---------- */
 .pied{margin-top:var(--espace)}
 .pied-fond{background:var(--encre);color:#d9d2c6}
-.pied-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:32px;padding-top:48px;padding-bottom:36px}
+.pied-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:32px;padding-top:48px;padding-bottom:36px}
 .pied-grille img{height:56px;width:auto;margin-bottom:14px}
 .pied-titre{font-family:var(--f-titre);font-weight:700;font-size:1.0625rem;color:#fff;margin-bottom:8px}
 .pied-grille p+p{margin-top:8px}
@@ -243,5 +243,14 @@ p,h1,h2,h3,figure{margin:0}
 .etapes{margin:0;padding:0;list-style:none;counter-reset:etape;display:flex;flex-direction:column;gap:14px}
 .etapes li{counter-increment:etape;position:relative;padding-left:46px;min-height:32px;color:var(--gris);font-size:1.0625rem}
 .etapes li::before{content:counter(etape);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:50%;background:var(--rouge);color:#fff;font-family:var(--f-titre);font-weight:800;display:flex;align-items:center;justify-content:center}
+
+
+/* ---------- Liens ajoutés (pied de page, tuiles) ---------- */
+.deux-col.trois{grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+.pied-liens{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.pied-liens a{display:inline-flex;align-items:center;min-height:36px}
+.lien-blanc{color:#fff;font-weight:600}
+.bloc-boissons .btn{margin-left:auto}
+@media (max-width:700px){.bloc-boissons .btn{margin-left:0}}
 
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
