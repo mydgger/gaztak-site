@@ -247,6 +247,8 @@ p,h1,h2,h3,figure{margin:0}
 
 /* ---------- Liens ajoutés (pied de page, tuiles) ---------- */
 .deux-col.trois{grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+@media (min-width:1000px){.raclette-accueil.inverse .raclette-photo{order:2}}
+.cadre-devanture{object-position:center 88%}
 .pied-liens{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
 .pied-liens a{display:inline-flex;align-items:center;min-height:36px}
 .lien-blanc{color:#fff;font-weight:600}
