@@ -30,6 +30,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": ["Restaurant", "BarOrPub"], "@id": "https://gaztak.fr/#etablissement", "name": "GAZTAK", "alternateName": "GAZTAK – le bar à fromages d’Agen", "description": "Bar de quesos en Agen (Francia): tablas de quesos de granja y embutidos artesanos, raclette a voluntad en invierno y terraza todo el año. 40 rue Voltaire.", "url": "https://gaztak.fr/es/", "logo": "https://gaztak.fr/assets/logo/gaztak-logo.png", "image": ["https://gaztak.fr/assets/img/gaztak-bar-a-fromages-agen-partage.jpg", "https://gaztak.fr/assets/img/planche-fromages-charcuteries-gaztak-agen-2000.webp", "https://gaztak.fr/assets/img/plateau-fromages-fermiers-gaztak-1200.webp", "https://gaztak.fr/assets/img/raclette-a-volonte-agen-gaztak-1170.webp", "https://gaztak.fr/assets/img/terrasse-gaztak-rue-voltaire-agen-1449.webp", "https://gaztak.fr/assets/img/devanture-gaztak-rue-voltaire-agen-1284.webp", "https://gaztak.fr/assets/img/mont-d-or-roti-gaztak-agen-1080.webp"], "telephone": "+33638127892", "email": "lukian@gaztak.fr", "address": {"@type": "PostalAddress", "streetAddress": "40 rue Voltaire", "postalCode": "47000", "addressLocality": "Agen", "addressRegion": "Nouvelle-Aquitaine", "addressCountry": "FR"}, "geo": {"@type": "GeoCoordinates", "latitude": 44.2036061, "longitude": 0.6148838}, "hasMap": "https://maps.google.com/?cid=4607134585899555750", "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "18:00", "closes": "23:59"}], "servesCuisine": ["Fromages", "Charcuterie", "Raclette"], "acceptsReservations": "https://app.resmio.com/gaztak/widget", "hasMenu": "https://gaztak.fr/es/carta/", "foundingDate": "2022", "priceRange": "€€", "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Terrasse ouverte toute l’année", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Accès PMR", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Chiens acceptés", "value": true}], "sameAs": ["https://www.instagram.com/gaztak_agen/", "https://www.facebook.com/fromageriegaztak", "https://maps.google.com/?cid=4607134585899555750"]}</script>
 <!-- Cloudflare Web Analytics (sans cookie) --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3f167095bc3648efbbb1fbab94975fa1"}'></script>
@@ -44,16 +45,16 @@
       <a href="/es/carta/">La carta</a>
       <a href="/es/raclette-agen/">Raclette</a>
       <a href="/es/eventos-privados-agen/">Eventos</a>
-      <a href="/es/#infos">Cómo llegar</a>
+      <a href="/es/#infos"><span class="nav-long">Cómo llegar</span><span class="nav-court">Info</span></a>
     </nav>
-    <ul class="langues" aria-label="Idioma"><li><a href="/" hreflang="fr" lang="fr" aria-label="Français">FR</a></li><li><a href="/en/" hreflang="en" lang="en" aria-label="English">EN</a></li><li><a href="/es/" hreflang="es" lang="es" aria-current="true" aria-label="Español">ES</a></li></ul>
+    <ul class="langues" aria-label="Idioma"><li><a href="/" hreflang="fr" lang="fr" aria-label="FR – Français">FR</a></li><li><a href="/en/" hreflang="en" lang="en" aria-label="EN – English">EN</a></li><li><a href="/es/" hreflang="es" lang="es" aria-current="true" aria-label="ES – Español">ES</a></li></ul>
     <a class="btn btn-rouge btn-petit btn-entete" href="https://app.resmio.com/gaztak/widget" target="_blank" rel="noopener" data-resa>Reservar</a>
   </div>
 </header>
 <main id="contenu">
 <section class="hero">
   <div class="hero-texte">
-    <h1 class="hero-titre"><img src="/assets/logo/gaztak-mot-blanc.svg" alt="GAZTAK" width="440" height="183"><span>Bar de quesos en Agen – raclette y tablas</span></h1>
+    <h1 class="hero-titre"><img src="/assets/logo/gaztak-mot-blanc.svg" alt="GAZTAK" width="440" height="183" fetchpriority="high"><span>Bar de quesos en Agen – raclette y tablas</span></h1>
     <p>Un auténtico bar de barrio donde se come bien: quesos de granja, embutidos artesanos y, todo el invierno, raclette a voluntad.</p>
     <div class="actions">
       <a class="btn btn-blanc" href="https://app.resmio.com/gaztak/widget" target="_blank" rel="noopener" data-resa>Reservar mesa</a>
@@ -77,7 +78,7 @@
       <p>Abierto en 2022 en la rue Voltaire, GAZTAK es hoy toda una institución en Agen. Aquí se viene por los quesos de granja, de leche cruda siempre que es posible, franceses y de otros lugares, y por los embutidos artesanos servidos en tablas para compartir. En la barra: cervezas de barril, vinos fáciles de beber y cócteles, con o sin alcohol.</p>
       <p class="mention-guide">En la guía Petit Futé desde 2022</p>
     </div>
-    <div class="tuile tuile-photo"><img class="cadre-devanture" src="/assets/img/devanture-gaztak-rue-voltaire-agen-1284.webp" srcset="/assets/img/devanture-gaztak-rue-voltaire-agen-800.webp 800w, /assets/img/devanture-gaztak-rue-voltaire-agen-1284.webp 1284w" sizes="(max-width: 700px) 100vw, 400px" width="1284" height="963" alt="La fachada de GAZTAK, en el 40 de la rue Voltaire de Agen, al anochecer" loading="lazy" decoding="async"></div>
+    <div class="tuile tuile-photo"><img class="cadre-devanture" src="/assets/img/devanture-gaztak-rue-voltaire-agen-800.webp" srcset="/assets/img/devanture-gaztak-rue-voltaire-agen-500.webp 500w, /assets/img/devanture-gaztak-rue-voltaire-agen-800.webp 800w, /assets/img/devanture-gaztak-rue-voltaire-agen-1284.webp 1284w" sizes="(max-width: 700px) 100vw, 400px" width="1284" height="963" alt="La fachada de GAZTAK, en el 40 de la rue Voltaire de Agen, al anochecer" loading="lazy" decoding="async"></div>
     <div class="tuile tuile-verte">
       <p class="tuile-grand">Una terraza de 60 plazas, abierta todo el año</p>
       <p>Y 40 plazas en el interior.</p>
