@@ -205,6 +205,9 @@ p,h1,h2,h3,figure{margin:0}
 .prose{max-width:780px;padding-top:clamp(40px,6vw,72px)}
 .prose h2{font-family:var(--f-titre);font-weight:800;font-size:1.5rem;margin:36px 0 8px}
 .prose p{color:#3d3a35}
+.prose ul{margin:8px 0;padding-left:22px;color:#3d3a35}
+.prose li{margin:6px 0}
+.prose p+p{margin-top:10px}
 
 /* ---------- Pied de page ---------- */
 .pied{margin-top:var(--espace)}
