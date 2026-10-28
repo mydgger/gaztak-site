@@ -268,4 +268,6 @@ p,h1,h2,h3,figure{margin:0}
 .bloc-boissons .btn{margin-left:auto}
 @media (max-width:700px){.bloc-boissons .btn{margin-left:0}}
 
+@media (max-width:359px){.titre-hero{font-size:42px}}
+
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
